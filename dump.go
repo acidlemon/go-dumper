@@ -39,6 +39,7 @@ func Fdump(out io.Writer, v_ interface{}) {
 		}
 
 		printf := func(s string, args ...interface{}) { fmt.Fprintf(out, s, args...) }
+		print := func(args ...interface{}) { fmt.Fprint(out, args...) }
 
 		// prevent circular for composite types
 		if v.CanAddr() {
